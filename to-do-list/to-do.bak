@@ -1,0 +1,84 @@
+// In javascript, if you call a function which takes parameters, and you don't pass any parameters, it will use the default value of the parameters or default to undefined
+
+// list of objects
+let todoList = JSON.parse(localStorage.getItem('todolist')) || [
+    {
+        name: 'what',
+        date: '29-05-2022'
+    },
+    {
+        name: 'mahomes-allen',
+        date: '29-05-2024'
+    }
+];
+
+renderTodoList();
+
+// render means to display something
+// creating with javascript, three step process
+// -> save the data - we use an array todoList for ourselves
+// -> generate the html - we use a template literal
+// -> make it interactive
+function renderTodoList() {
+    // list is adaptablle so it's better to create your own html and have that storted in a div
+    // rather than trying to map for multiple paragraphs, <p> can't be used for multiple paragraphs
+    let todoListHTML = '';
+
+    for (let i = 0; i < todoList.length; i++) {
+        const todoObject = todoList[i];
+        //destructuring baby property_name: new_variable_name
+        const {name:changedName, date:dueDate} = todoObject;
+    
+        // thank goodness for template strings having that multiline feature
+        // we want to display as a grid, but it's all wrapped in one element and so looks weird when you try to group as columns, 
+        // solution is to split into 3 elements with div
+        const html = `
+        <div>${changedName}</div>
+        <div>${dueDate}</div>
+        <button onclick="deleteClick(${i});" class="delete-button">
+            Delete
+        </button>
+        
+        `; 
+        todoListHTML += html;
+    }
+
+    console.log(todoListHTML);
+
+    document.querySelector('.js-todo-list').innerHTML = todoListHTML;
+}
+
+function deleteClick(index) {
+    todoList.splice(index, 1);
+    localStorage.setItem('todolist', JSON.stringify(todoList));
+    renderTodoList();
+}
+
+function addTodo() {
+
+    let inputElement = document.querySelector('.js-name-input');
+    let value = inputElement.value; // value supplied in the textbox
+
+    let dateInputElement = document.querySelector('.js-due-date-input');
+    let dueDate = dateInputElement.value;
+
+    todoList.push({
+        // property - variable name
+        name: value,
+        date: dueDate
+    });
+
+    localStorage.setItem('todolist', JSON.stringify(todoList));
+    console.log(todoList);
+
+    inputElement.value = ''; // reset the text in the textbox after addition
+
+    renderTodoList();
+}
+
+function handleCostKeyDown(event) {
+    if (event.key === 'Enter') {
+        addTodo();
+    }
+}
+

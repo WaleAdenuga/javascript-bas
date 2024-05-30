@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM projects</title>
+    <link rel="stylesheet" href="dom-projects.css">
+</head>
+<body>
+    <p>Youtube Subscribe Button</p>
+    <!--an element can have multiple classes, one for css and one for javascript-->
+    <button id="subscribe-button" onclick="clickSubscribe()" class="js-subscribe-button subscribe-button">Subscribe</button>
+
+    <p>Amazon shipping container</p>
+    <!--input doesn't need closing tag like </input because it's a void element
+    click and keydowns are event listeners-->
+    <input placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="handleCostKeyDown(event)">
+    <button onclick="clickCalculate()" class="calculate-button">Calculate</button>
+    <p class="total-cost"></p>
+    <p class="js-error error-message"></p>
+
+    <script src="dom-projects.js">
+        
+    </script>
+</body>
+</html>

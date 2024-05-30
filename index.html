@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!---button is css selelector, within it is the syle, left side is css property, red is property value, ; is end of a style
+.red-button shows you want to select class red button-->
+    <style>
+        /*comment in css code*/
+        .red-button {
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <!-- attribute is in openeing tag of element which is button,class attribute adds label to an element -->
+    <button title="Good job" class="red-button" onclick="alert('poppup')">
+        Hello
+    </button>
+
+    <p>
+        Hello, this is a paragraph of <button> haya </button> css sucks
+    </p>
+    <button onclick="
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+    <button onclick="
+        cartQuantity++;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Add to cart</button>
+    <button onclick="
+        cartQuantity +=2;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+2</button>
+    <button onclick="
+        cartQuantity += 3;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+3</button>
+    <button  onclick="
+        cartQuantity = 45;
+        console.log('cart Quantity was reset')
+        console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Reset Cart</button>
+
+    <button>hello</button>
+    <!--recall class attribute sort of gives an id to element-->
+    <button class="js-button">Second button</button>
+
+    <!-- Best place to put script is at the end of the body, after all the elements -->
+    <!-- Browser executes top to bottom, so better for browser to parse javascript code after laying page, 
+        also script would need to talk to other webpage elements
+    script element runs when the page is first loaded, before interaction with other elements -->
+    <script src="index.js">
+        
+    </script>
+</body>
+</html>

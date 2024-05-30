@@ -1,0 +1,3 @@
+[submodule "javascript-amazon-project"]
+	path = javascript-amazon-project
+	url = git@github.com:WaleAdenuga/javascript-amazon-project.git

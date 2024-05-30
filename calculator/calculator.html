@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+
+    <p class="js-calculation calc-result"></p>
+
+    <p>
+        <button onclick="
+            updateCalculation('1');
+        " class="no-button calc-button">1</button>
+        <button onclick="
+            updateCalculation('2');
+        " class="no-button calc-button">2</button>
+        <button onclick="
+            updateCalculation('3');
+        " class="no-button calc-button">3</button>
+
+        <button onclick="
+            updateCalculation(' + ');
+        " class="op-button calc-button">+</button>
+        
+    </p>
+    <p>
+        <button onclick="
+            updateCalculation('4');
+        " class="no-button calc-button">4</button>
+        <button onclick="
+            updateCalculation('5');
+        " class="no-button calc-button">5</button>
+        <button onclick="
+            updateCalculation('6');
+        " class="no-button calc-button">6</button>
+
+        <button onclick="
+            updateCalculation(' - ');
+        " class="op-button calc-button">-</button>
+    </p>
+    <p>
+        <button onclick="
+            updateCalculation('7');
+        " class="no-button calc-button">7</button>
+        <button onclick="
+            updateCalculation('8');
+        " class="no-button calc-button">8</button>
+        <button onclick="
+            updateCalculation('9');
+        " class="no-button calc-button">9</button>
+
+        <button onclick="
+            updateCalculation(' * ');
+        " class="op-button calc-button">*</button>
+
+    </p>
+
+    <p> 
+        <button onclick="
+            updateCalculation('0');
+        " class="no-button calc-button">0</button>
+        <button onclick="
+            updateCalculation(' . ');
+        " class="no-button calc-button">.</button>
+        <button onclick="
+            evalCalculation();
+        " class="no-button calc-button">=</button>
+
+        <button onclick="
+        updateCalculation(' / ');
+        "class="op-button calc-button">/</button>
+    </p>
+    
+    <p>
+        <button onclick="
+            clearCalculation();
+        " class="no-button clear-text calc-button">Clear</button>
+    </p>
+    
+
+    <script src="calculator.js">
+
+    </script>
+</body>
+</html>
